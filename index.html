@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Dérik Lima e apresentação da Borracharia Lima.">
+  <title>Dérik Lima | Portfólio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <a class="logo" href="#inicio">DÉRIK <span>LIMA</span></a>
+    <nav>
+      <a href="#sobre">Sobre mim</a>
+      <a href="#empresa">Empresa</a>
+      <a href="#fotos">Fotos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="hero-text">
+        <p class="tag">PORTFÓLIO PESSOAL & EMPRESARIAL</p>
+        <h1>Olá, eu sou<br><span>Dérik Lima.</span></h1>
+        <p class="intro">
+          Sou estudante de Medicina Veterinária na UNILEÃO e vim apresentar
+          um pouco da minha história, meus objetivos e a minha empresa:
+          <strong>Borracharia Lima.</strong>
+        </p>
+        <div class="buttons">
+          <a class="btn" href="#sobre">Conheça minha história</a>
+          <a class="btn outline" href="#fotos">Adicionar fotos</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="photo-placeholder">
+        
+          <small><img src="ChatGPT Image 30 de set. de 2026, 08_40_00.png" alt="Foto minha">
+      </div>
+    </section>
+
+    <section id="sobre" class="section">
+      <div class="section-title">
+        <p class="tag">SOBRE MIM</p>
+        <h2>Quem é <span>Dérik Lima?</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>🎓 Formação</h3>
+          <p>Atualmente curso <strong>Medicina Veterinária na UNILEÃO</strong>, buscando construir minha formação profissional e ampliar meus conhecimentos.</p>
+        </div>
+        <div class="about-card">
+          <h3>🎯 Objetivos</h3>
+          <p>Meu objetivo é crescer profissionalmente, adquirir experiência e transformar dedicação e trabalho em novas oportunidades.</p>
+        </div>
+        <div class="about-card">
+          <h3>💼 Empreendedorismo</h3>
+          <p>Além da faculdade, apresento a <strong>Borracharia Lima</strong>, empresa voltada para serviços automotivos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="empresa" class="section company">
+      <div class="company-image">
+        <div class="image-box">
+          <span>BORRACHARIA<br><b>LIMA</b></span>
+        </div>
+      </div>
+      <div class="company-text">
+        <p class="tag">MINHA EMPRESA</p>
+        <h2>Borracharia <span>Lima</span></h2>
+        <p>
+          A Borracharia Lima trabalha com atendimento automotivo,
+          oferecendo serviços para pneus e manutenção, com foco em
+          qualidade, confiança e agilidade.
+        </p>
+        <ul>
+          <li> 🛞 Pneus</li>
+          <li>⚙️ Balanceamento</li>
+          <li>🔧 Alinhamento</li>
+          <li>🛠️ Consertos</li>
+        </ul>
+        <a class="btn" href="#contato">Fale comigo</a>
+      </div>
+    </section>
+
+    <section id="fotos" class="section gallery-section">
+      <div class="section-title center">
+        <p class="tag">PORTFÓLIO</p>
+        <h2>Minhas <span>fotos</span></h2>
+        <p>Use o botão abaixo para escolher fotos do seu celular ou computador. Elas aparecerão nesta página.</p>
+      </div>
+
+      <label class="upload-btn">
+        <img src="ChatGPT Image 30 de set. de 2026, 08_39_40.png" alt="foto empresa">
+        📷 Adicionar fotos
+        <input id="photoInput" type="file" accept="image/*" multiple>
+      </label>
+
+      <div id="gallery" class="gallery">
+        <div class="empty-gallery">Suas fotos aparecerão aqui.</div>
+      </div>
+    </section>
+
+    <section id="contato" class="contact">
+      <div>
+        <p class="tag">CONTATO</p>
+        <h2>Vamos conversar?</h2>
+        <p>Entre em contato para conhecer melhor meu trabalho e a Borracharia Lima.</p>
+      </div>
+      <div class="contact-info">
+        <p><strong>📍 Localização:</strong> Araripe - CE • Sítio Mulungu</p>
+        <p><strong>📱 WhatsApp:</strong> (88) 99251-2874</p>
+        <a class="btn" href="https://wa.me/5588992512874" target="_blank">Chamar no WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Dérik Lima • Portfólio</p>
+  </footer>
+
+  <script>
+    const input = document.getElementById("photoInput");
+    const gallery = document.getElementById("gallery");
+
+    input.addEventListener("change", () => {
+      gallery.innerHTML = "";
+
+      if (!input.files.length) {
+        gallery.innerHTML = '<div class="empty-gallery">Suas fotos aparecerão aqui.</div>';
+        return;
+      }
+
+      [...input.files].forEach(file => {
+        if (!file.type.startsWith("image/")) return;
+
+        const card = document.createElement("div");
+        card.className = "gallery-item";
+
+        const img = document.createElement("img");
+        img.src = URL.createObjectURL(file);
+        img.alt = "Foto do portfólio de Dérik Lima";
+
+        card.appendChild(img);
+        gallery.appendChild(card);
+      });
+    });
+  </script>
+
+</body>
+</html>
